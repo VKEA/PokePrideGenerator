@@ -1,37 +1,38 @@
 /*
 * Draw image
 */
+function renderImage () {
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
 
-const canvas = document.getElementById("myCanvas");
-const ctx = canvas.getContext("2d");
+  const img1 = loadImage('./flags/test1.png', main);
+  const img2 = loadImage('./pokemon/'+document.getElementById('pokemonselector').value, main);
 
-const img1 = loadImage('test1.png', main);
-const img2 = loadImage('test2.png', main);
+  let imagesLoaded = 0;
+  function main() {
+      imagesLoaded += 1;
 
-let imagesLoaded = 0;
-function main() {
-    imagesLoaded += 1;
+      if(imagesLoaded == 2) {
+          // composite now
+          ctx.drawImage(img1, 0, 0, 500, 500);
 
-    if(imagesLoaded == 2) {
-        // composite now
-        ctx.drawImage(img1, 0, 0, 500, 500);
+          ctx.globalAlpha = 1;
+          ctx.drawImage(img2, (canvas.width-img2.width)/2, (canvas.height-img2.height)/2);
+      }
+  }
 
-        ctx.globalAlpha = 1;
-        ctx.drawImage(img2, (canvas.width-img2.width)/2, (canvas.height-img2.height)/2);
-    }
-}
+  function loadImage(src, onload) {
+      let img = new Image();
 
-function loadImage(src, onload) {
-    let img = new Image();
+      img.onload = onload;
+      img.src = src;
 
-    img.onload = onload;
-    img.src = src;
-
-    return img;
+      return img;
+  }
 }
 
 /*
-* Populate drop-down
+* Populate pokémon drop-down
 */
 
 let dropdown = document.getElementById('pokemonselector');
@@ -60,7 +61,11 @@ request.onload = function() {
     }
    } else {
     // Reached the server, but it returned an error
-  }   
+  }
+  option = document.createElement('option');
+  option.text = 'wooloo';
+  option.value = 'test2.png';
+  dropdown.add(option);
 }
 
 request.onerror = function() {
