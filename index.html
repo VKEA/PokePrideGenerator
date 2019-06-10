@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            .imagecontainer {
+                width: 100vw;
+                padding: 20px;
+            }
+
+            .renderoptions {
+                padding-left: 20px;
+            }
+            #flagselector {
+                margin-top: 20px;
+            }
+
+            select {
+                font-size: 18pt;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="imagecontainer">
+            <canvas id="myCanvas" width="500" height="500"></canvas>
+        </div>
+        <div class="renderoptions">
+            <select id="pokemonselector">
+            </select><br />
+            <select id="flagselector">
+                <option>choose flag</option>
+            </select>
+        </div>
+    </body>
+</html>
+<script src="script.js"></script>
