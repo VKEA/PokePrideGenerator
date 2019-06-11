@@ -36,27 +36,61 @@ function renderImage () {
 * Get pokémon image
 */
 function getPokemon () {
-  const requestForm = new XMLHttpRequest();
+  /* HARDCODED */
+  switch (document.getElementById('pokemonselector').value) {
+    case 'grookey':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/7/7a/Grookey.png');
+    break;
+    case 'scorbunny':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/c/cc/Scorbunny.png');
+    break;
+    case 'sobble':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/0/0c/Sobble.png');
+    break;
+    case 'gossifleur':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/8/83/Gossifleur.png');
+    break;
+    case 'eldegoss':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/d/da/Eldegoss.png');
+    break;
+    case 'wooloo':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/2/2f/Wooloo.png');
+    break;
+    case 'corviknight':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/2/2e/Corviknight.png');
+    break;
+    case 'drednaw':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/4/4e/Drednaw.png');
+    break;
+    case 'zacian':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/a/a7/Zacian.png');
+    break;
+    case 'zamazenta':
+        getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/b/bd/Zamazenta.png');
+      break;
+    default:
+      const requestForm = new XMLHttpRequest();
 
-  requestForm.onload = function() {
-    if (requestForm.status === 200) {
-      const form = JSON.parse(requestForm.responseText);
-      getPokemonForm(form);
-    } else {
-      // Reached the server, but it returned an error
-    }
+      requestForm.onload = function() {
+        if (requestForm.status === 200) {
+          const form = JSON.parse(requestForm.responseText);
+          getPokemonForm(form);
+        } else {
+          // Reached the server, but it returned an error
+        }
+      }
+      
+      requestForm.onerror = function() {
+        console.error('An error occurred fetching the JSON from ' + url);
+      };
+
+      requestForm.open('GET', document.getElementById('pokemonselector').value, true);
+      requestForm.send();
+      break;
   }
-  
-  requestForm.onerror = function() {
-    console.error('An error occurred fetching the JSON from ' + url);
-  };
-
-  requestForm.open('GET', document.getElementById('pokemonselector').value, true);
-  requestForm.send();
 }
 
 function getPokemonForm (form) {
-  console.log(form)
   const requestPokemonForm = new XMLHttpRequest();
     requestPokemonForm.open('GET', form.pokemon.url, true);
 
@@ -68,7 +102,6 @@ function getPokemonForm (form) {
         for (;dexNumber.length < 3;) {
           dexNumber = "0"+dexNumber;
         }
-        console.log('getPokemonForm: '+'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'.png');
         document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'.png';
         renderImage();
       }
@@ -79,6 +112,11 @@ function getPokemonForm (form) {
     };
 
     requestPokemonForm.send();
+}
+
+function getUnlistedPokemonForm (url) {
+  document.getElementById('pokemon').href = url;
+  renderImage();
 }
 
 /*
@@ -112,8 +150,44 @@ request.onload = function() {
     // Reached the server, but it returned an error
   }
   option = document.createElement('option');
+  option.text = 'grookey';
+  option.value = 'grookey';
+  dropdown.add(option);
+  option = document.createElement('option');
+  option.text = 'scorbunny';
+  option.value = 'scorbunny';
+  dropdown.add(option);
+  option = document.createElement('option');
+  option.text = 'sobble';
+  option.value = 'sobble';
+  dropdown.add(option);
+  option = document.createElement('option');
+  option.text = 'gossifleur';
+  option.value = 'gossifleur';
+  dropdown.add(option);
+  option = document.createElement('option');
+  option.text = 'eldegoss';
+  option.value = 'eldegoss';
+  dropdown.add(option);
+  option = document.createElement('option');
   option.text = 'wooloo';
-  option.value = '';
+  option.value = 'wooloo';
+  dropdown.add(option);
+  option = document.createElement('option');
+  option.text = 'corviknight';
+  option.value = 'corviknight';
+  dropdown.add(option);
+  option = document.createElement('option');
+  option.text = 'drednaw';
+  option.value = 'drednaw';
+  dropdown.add(option);
+  option = document.createElement('option');
+  option.text = 'zacian';
+  option.value = 'zacian';
+  dropdown.add(option);
+  option = document.createElement('option');
+  option.text = 'zamazenta';
+  option.value = 'zamazenta';
   dropdown.add(option);
 }
 
