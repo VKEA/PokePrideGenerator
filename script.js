@@ -5,7 +5,7 @@ function renderImage () {
   const canvas = document.getElementById("myCanvas");
   const ctx = canvas.getContext("2d");
 
-  const img1 = loadImage('./flags/test1.png', main);
+  const img1 = loadImage('./flags/'+document.getElementById('flagselector').value, main);
   const img2 = loadImage('./pokemon/'+document.getElementById('pokemonselector').value, main);
 
   let imagesLoaded = 0;
@@ -17,7 +17,7 @@ function renderImage () {
           ctx.drawImage(img1, 0, 0, 500, 500);
 
           ctx.globalAlpha = 1;
-          ctx.drawImage(img2, (canvas.width-img2.width)/2, (canvas.height-img2.height)/2);
+          ctx.drawImage(img2, (canvas.width-300)/2, (canvas.height-300)/2, 300, 300);
       }
   }
 
@@ -64,7 +64,7 @@ request.onload = function() {
   }
   option = document.createElement('option');
   option.text = 'wooloo';
-  option.value = 'test2.png';
+  option.value = 'wooloo.png';
   dropdown.add(option);
 }
 
