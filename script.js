@@ -2,11 +2,12 @@
 * Draw image
 */
 function renderImage () {
+
   const canvas = document.getElementById("myCanvas");
   const ctx = canvas.getContext("2d");
 
   const img1 = loadImage('./flags/'+document.getElementById('flagselector').value, main);
-  const img2 = loadImage(document.getElementById('imageURL').href, main);
+  const img2 = loadImage(document.getElementById('pokemon').href, main);
 
   let imagesLoaded = 0;
   function main() {
@@ -34,43 +35,13 @@ function renderImage () {
 /*
 * Get pokémon image
 */
-function getImage () {
+function getPokemon () {
   const requestForm = new XMLHttpRequest();
-  requestForm.open('GET', document.getElementById('pokemonselector').value, true);
 
   requestForm.onload = function() {
     if (requestForm.status === 200) {
       const form = JSON.parse(requestForm.responseText);
-
-      let name = document.getElementById('pokemonselector').options[document.getElementById('pokemonselector').selectedIndex].text;
-      var splitStr = name.toLowerCase().split('-');
-      for (var i = 0; i < splitStr.length; i++) {
-
-          splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
-      }
-      splitStr.join('-');
-
-      const requestPokemonForm = new XMLHttpRequest();
-      requestPokemonForm.open('GET', form.pokemon.url, true);
-
-      requestPokemonForm.onload = function() {
-        const pokemonForm = JSON.parse(requestPokemonForm.responseText);
-
-        let dexNumber = pokemonForm.species.url.slice(42,-1);
-        for (;dexNumber.length < 3;) {
-          dexNumber = "0"+dexNumber;
-        }
-        console.log('https://assets.pokemon.com/assets/cms2/img/pokedex/detail/'+dexNumber+'.png');
-        document.getElementById('imageURL').href = ('https://assets.pokemon.com/assets/cms2/img/pokedex/detail/'+dexNumber+'.png');
-        document.getElementById('imageURL').innerText = ('https://assets.pokemon.com/assets/cms2/img/pokedex/detail/'+dexNumber+'.png');
-        renderImage();
-      }
-
-      requestPokemonForm.onerror = function() {
-        console.error('An error occurred fetching the JSON from ' + url);
-      };
-
-      requestPokemonForm.send();
+      getPokemonForm(form);
     } else {
       // Reached the server, but it returned an error
     }
@@ -79,8 +50,35 @@ function getImage () {
   requestForm.onerror = function() {
     console.error('An error occurred fetching the JSON from ' + url);
   };
-  
+
+  requestForm.open('GET', document.getElementById('pokemonselector').value, true);
   requestForm.send();
+}
+
+function getPokemonForm (form) {
+  console.log(form)
+  const requestPokemonForm = new XMLHttpRequest();
+    requestPokemonForm.open('GET', form.pokemon.url, true);
+
+    requestPokemonForm.onload = function() {
+      if (requestPokemonForm.status === 200) {
+        const pokemonForm = JSON.parse(requestPokemonForm.responseText);
+
+        let dexNumber = pokemonForm.species.url.slice(42,-1);
+        for (;dexNumber.length < 3;) {
+          dexNumber = "0"+dexNumber;
+        }
+        console.log('getPokemonForm: '+'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'.png');
+        document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'.png';
+        renderImage();
+      }
+    }
+
+    requestPokemonForm.onerror = function() {
+      console.error('An error occurred fetching the JSON from ' + url);
+    };
+
+    requestPokemonForm.send();
 }
 
 /*
@@ -115,7 +113,7 @@ request.onload = function() {
   }
   option = document.createElement('option');
   option.text = 'wooloo';
-  option.value = 'wooloo.png';
+  option.value = '';
   dropdown.add(option);
 }
 
