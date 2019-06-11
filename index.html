@@ -21,6 +21,10 @@
             select {
                 font-size: 18pt;
             }
+
+            #imageURL {
+                display: none;
+            }
         </style>
     </head>
     <body>
@@ -28,10 +32,9 @@
             <canvas id="myCanvas" width="500" height="500"></canvas>
         </div>
         <div class="renderoptions">
-            <select id="pokemonselector" onchange="renderImage()">
+            <select id="pokemonselector" onchange="getImage()">
             </select><br />
-            <select id="flagselector" onchange="renderImage()">
-                <option>choose flag</option>
+            <select id="flagselector" onchange="getImage()">
                 <option value="agender.png">agender</option>
                 <option value="aromantic.png">aromantic</option>
                 <option value="asexual.png">asexual</option>
@@ -56,6 +59,13 @@
                 <option value="trans-israel.png">israeli trans flag</option>
                 <option value="twink.png">twink</option>
             </select>
+            <a id="imageURL"></a>
+            <p class="disclaimer">
+                Rendering might take a while, please be patient<br />
+                Not all forms are available just yet. Might be added in a future update.<br />
+                If the image doesn't render after a long while, make sure you can connect to http://pokemon.com<br />
+                Source can be found on <a href="https://github.com/Zt-freak/pokepridegenerator">GitHub</a>
+            </p>
         </div>
     </body>
 </html>
