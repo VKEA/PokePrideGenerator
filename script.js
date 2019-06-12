@@ -103,9 +103,47 @@ function getPokemon () {
           break;
         case 'mimikyu-busted':
         case 'mimikyu-totem-busted':
-            getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/3/3a/778Mimikyu_Busted_Dream.png');
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/3/3a/778Mimikyu_Busted_Dream.png');
           break;
-        
+        case 'minior-violet-meteor':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/3/33/774Minior_Violet_Dream.png');
+          break;
+        case 'minior-indigo-meteor':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/9/91/774Minior_Indigo_Dream.png');
+          break;
+        case 'minior-blue-meteor':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/8/81/774Minior_Blue_Dream.png');
+          break;
+        case 'minior-green-meteor':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/d/d8/774Minior_Green_Dream.png');
+          break;
+        case 'minior-yellow-meteor':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/d/dd/774Minior_Yellow_Dream.png');
+          break;
+        case 'minior-orange-meteor':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/b/b3/774Minior_Orange_Dream.png');
+          break;
+        case 'minior-red-meteor':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/f/ff/774Minior_Red_Dream.png');
+          break;
+        case 'wishiwashi-school':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/746_f2.png');
+          break;
+        case 'lycanroc-midnight':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/745_f2.png');
+          break;
+        case 'oricorio-sensu':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/741_f4.png');
+          break;
+        case 'oricorio-pau':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/741_f3.png');
+          break;
+        case 'oricorio-pom-pom':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/741_f2.png');
+          break;
+        case 'greninja-ash':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/658_f2.png');
+          break;
         default:
           const requestForm = new XMLHttpRequest();
 
@@ -178,7 +216,18 @@ request.onload = function() {
       option = document.createElement('option');
       option.text = data.results[i].name;
       option.value = data.results[i].url + '';
-      dropdown.add(option);
+
+      if (
+        option.text.match(/totem/i) ||
+        option.text.match(/spewpa-/i) ||
+        option.text.match(/scatterbug-/i) ||
+        option.text.match(/mothim-/i) ||
+        option.text.match(/rockruff-/i) ||
+        option.text.match(/greninja-battle-bond/i)
+        ){}
+      else {
+        dropdown.add(option);
+      }
     }
    } else {
     // Reached the server, but it returned an error
