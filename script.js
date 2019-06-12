@@ -76,6 +76,23 @@ function getPokemon () {
     default:
       /* MORE HARDCODED */
       switch (document.getElementById('pokemonselector').options[document.getElementById('pokemonselector').selectedIndex].text) {
+        case 'necrozma-ultra':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/800_f4.png');
+          break;
+        case 'necrozma-dawn':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/800_f3.png');
+          break;
+        case 'necrozma-dusk':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/800_f2.png');
+          break;
+        case 'pikachu-partner-cap':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/1/17/025Pikachu-Original.png');
+          break;
+        case 'mimikyu-busted':
+        case 'mimikyu-totem-busted':
+            getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/3/3a/778Mimikyu_Busted_Dream.png');
+          break;
+        
         default:
           const requestForm = new XMLHttpRequest();
 
@@ -202,3 +219,15 @@ request.onerror = function() {
 };
 
 request.send();
+
+/*
+* copyright
+*/
+
+document.getElementById("copyright").innerHTML = `
+  This site is not affiliated with GAME FREAK, The Pok\E9mon Company or Nintendo.<br />
+  Pok\xE9mon artwork is made by Ken Sugimori and is retrieved from: <br />
+  <a href="http://pokemon.com">The Official Pok\xE9mon Site</a><br />
+  <a href="https://bulbapedia.bulbagarden.net/wiki/">Bulbapedia</a><br />
+  Pok\xE9mon \u00A9 1995-`+new Date().getFullYear()+` Nintendo.
+`
