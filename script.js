@@ -203,10 +203,24 @@ function getPokemonForm (form, option) {
         for (;dexNumber.length < 3;) {
           dexNumber = "0"+dexNumber;
         }
-        if (option.match(/-mega/i) ||
-        option.match(/-alola/i) && !option.match(/cap/i)
+        if (option.match(/-mega/i) &&  !option.match(/-mega-y/i)||
+        option.match(/-alola/i) && !option.match(/cap/i) ||
+        option.match(/-primal/i) ||
+        option.match(/-unbound/i) ||
+        option.match(/-origin/i) ||
+        option.match(/-therian/i) ||
+        option.match(/-resolute/i) ||
+        option.match(/-pirouette/i) ||
+        option.match(/-zen/i) ||
+        option.match(/-blue-striped/i) ||
+        option.match(/-east/i) ||
+        option.match(/-sky/i) ||
+        option.match(/-sunshine/i)
         ) {
           document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'_f2.png';
+        }
+        else if (option.match(/-mega-y/i)) {
+          document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'_f3.png';
         }
         else {
           document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'.png';
