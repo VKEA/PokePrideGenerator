@@ -53,7 +53,7 @@
     </head>
     <body>
         <div id="imageContainer" class="imagecontainer">
-            <canvas crossorigin="anonymous" id="myCanvas" width="500" height="500"></canvas>
+            <canvas id="myCanvas" width="500" height="500"></canvas>
         </div>
         <div id="optionsContainer" class="renderoptions">
             <select id="pokemonselector" onchange="getPokemon()">
@@ -85,11 +85,13 @@
             </select><br />
             <!--<button class="downloadbutton" id="downloadButton" onclick="downloadImage()">Download</button>-->
             <p class="disclaimer">
-                Rendering might take a while, please be patient<br />
-                Renders a Canvas element, not all browsers support downloading canvas elements as image.<br />
-                Not all forms are available just yet. Might be added in a future update.<br />
-                If the image doesn't render after a long while, make sure you can connect to http://pokemon.com<br />
-                Source can be found on <a href="https://github.com/Zt-freak/pokepridegenerator">GitHub</a>
+                <ul>
+                    <li><b>Rendering might take a while, please be patient</b></li>
+                    <li><b>Renders a Canvas element, not all browsers support downloading canvas elements as image.</b></li>
+                    <li><b>Not all forms are available just yet. Might be added in a future update.</b></li>
+                    <li><b>If the image doesn't render after a long while, make sure you can connect to http://pokemon.com</b></li>
+                    <li><b>Source can be found on <a href="https://github.com/Zt-freak/pokepridegenerator">GitHub</a></b></li>
+                </ul>
             </p>
             <p id="copyright" class="copyright"></p>
             <a id="pokemon" href=""></a>

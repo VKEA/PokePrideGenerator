@@ -6,7 +6,7 @@ function renderImage (callback) {
   const canvas = document.getElementById("myCanvas");
   const ctx = canvas.getContext("2d");
 
-  const img1 = loadImage('./flags/'+document.getElementById('flagselector').value, main);
+  const img1 = loadImage('https://raw.githubusercontent.com/Zt-freak/pokepridegenerator/master/flags/'+document.getElementById('flagselector').value, main);
   const img2 = loadImage(document.getElementById('pokemon').href, main);
 
   let imagesLoaded = 0;
@@ -35,6 +35,19 @@ function renderImage (callback) {
 /*
 * Download image
 */
+function downloadImage () {
+var canvas = document.getElementById('myCanvas'),
+dataUrl = canvas.toDataURL(),
+imageFoo = document.createElement('img');
+imageFoo.src = dataUrl;
+
+// Style your image here
+imageFoo.style.width = '100px';
+imageFoo.style.height = '100px';
+
+// After you are done styling it, append it to the BODY element
+document.body.appendChild(imageFoo);
+}
 
 
 /*
