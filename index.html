@@ -26,16 +26,21 @@
                 font-size: 18pt;
             }
 
+            .downloadbutton {
+                font-size: 18pt;
+                margin-top: 20px;
+            }
+
             #imageURL {
                 display: none;
             }
         </style>
     </head>
     <body>
-        <div class="imagecontainer">
-            <canvas id="myCanvas" width="500" height="500"></canvas>
+        <div id="imageContainer" class="imagecontainer">
+            <canvas crossorigin="anonymous" id="myCanvas" width="500" height="500"></canvas>
         </div>
-        <div class="renderoptions">
+        <div id="optionsContainer" class="renderoptions">
             <select id="pokemonselector" onchange="getPokemon()">
             </select><br />
             <select id="flagselector" onchange="getPokemon()">
@@ -62,9 +67,11 @@
                 <option value="trans.png">transgender</option>
                 <option value="trans-israel.png">israeli trans flag</option>
                 <option value="twink.png">twink</option>
-            </select>
+            </select><br />
+            <!--<button class="downloadbutton" id="downloadButton" onclick="downloadImage()">Download</button>-->
             <p class="disclaimer">
                 Rendering might take a while, please be patient<br />
+                Renders a Canvas element, not all browsers support downloading canvas elements as image.<br />
                 Not all forms are available just yet. Might be added in a future update.<br />
                 If the image doesn't render after a long while, make sure you can connect to http://pokemon.com<br />
                 Source can be found on <a href="https://github.com/Zt-freak/pokepridegenerator">GitHub</a>

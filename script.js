@@ -1,7 +1,7 @@
 /*
 * Draw image
 */
-function renderImage () {
+function renderImage (callback) {
 
   const canvas = document.getElementById("myCanvas");
   const ctx = canvas.getContext("2d");
@@ -31,6 +31,11 @@ function renderImage () {
       return img;
   }
 }
+
+/*
+* Download image
+*/
+
 
 /*
 * Get pokémon image
@@ -69,23 +74,28 @@ function getPokemon () {
         getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/b/bd/Zamazenta.png');
       break;
     default:
-      const requestForm = new XMLHttpRequest();
+      /* MORE HARDCODED */
+      switch (document.getElementById('pokemonselector').options[document.getElementById('pokemonselector').selectedIndex].text) {
+        default:
+          const requestForm = new XMLHttpRequest();
 
-      requestForm.onload = function() {
-        if (requestForm.status === 200) {
-          const form = JSON.parse(requestForm.responseText);
-          getPokemonForm(form);
-        } else {
-          // Reached the server, but it returned an error
-        }
+          requestForm.onload = function() {
+            if (requestForm.status === 200) {
+              const form = JSON.parse(requestForm.responseText);
+              getPokemonForm(form);
+            } else {
+              // Reached the server, but it returned an error
+            }
+          }
+          
+          requestForm.onerror = function() {
+            console.error('An error occurred fetching the JSON from ' + url);
+          };
+    
+          requestForm.open('GET', document.getElementById('pokemonselector').value, true);
+          requestForm.send();
+          break;
       }
-      
-      requestForm.onerror = function() {
-        console.error('An error occurred fetching the JSON from ' + url);
-      };
-
-      requestForm.open('GET', document.getElementById('pokemonselector').value, true);
-      requestForm.send();
       break;
   }
 }
@@ -124,12 +134,6 @@ function getUnlistedPokemonForm (url) {
 */
 let dropdown = document.getElementById('pokemonselector');
 dropdown.length = 0;
-
-let defaultOption = document.createElement('option');
-defaultOption.text = 'choose pok\xE9mon';
-
-dropdown.add(defaultOption);
-dropdown.selectedIndex = 0;
 
 const url = 'https://pokeapi.co/api/v2/pokemon-form?offset=0&limit=1123';
 
@@ -189,6 +193,8 @@ request.onload = function() {
   option.text = 'zamazenta';
   option.value = 'zamazenta';
   dropdown.add(option);
+  
+  getPokemon()
 }
 
 request.onerror = function() {
