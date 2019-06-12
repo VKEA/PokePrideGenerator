@@ -99,10 +99,9 @@ function getPokemon () {
           getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/800_f2.png');
           break;
         case 'pikachu-partner-cap':
-          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/1/17/025Pikachu-Original.png');
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/7/75/025Pikachu-Partner.png');
           break;
         case 'mimikyu-busted':
-        case 'mimikyu-totem-busted':
           getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/3/3a/778Mimikyu_Busted_Dream.png');
           break;
         case 'minior-violet-meteor':
@@ -197,6 +196,24 @@ function getPokemon () {
           break;
         case 'raichu-alola':
           getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/026_f2.png');
+          break;
+        case 'pikachu-alola-cap':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/e/e3/025Pikachu-Alola.png');
+          break;
+        case 'pikachu-kalos-cap':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/4/44/025Pikachu-Kalos.png');
+          break;
+        case 'pikachu-unova-cap':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/e/e6/025Pikachu-Unova.png');
+          break;
+        case 'pikachu-sinnoh-cap':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/a/a4/025Pikachu-Sinnoh.png');
+          break;
+        case 'pikachu-hoenn-cap':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/4/44/025Pikachu-Hoenn.png');
+          break;
+        case 'pikachu-original-cap':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/1/17/025Pikachu-Original.png');
           break;
         default:
           const requestForm = new XMLHttpRequest();
