@@ -144,6 +144,60 @@ function getPokemon () {
         case 'greninja-ash':
           getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/658_f2.png');
           break;
+        case 'zygarde-10':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/718_f2.png');
+          break;
+        case 'zygarde-complete':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/718_f3.png');
+          break;
+        case 'marowak-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/105_f2.png');
+          break;
+        case 'exeggutor-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/103_f2.png');
+          break;
+        case 'muk-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/089_f2.png');
+          break;
+        case 'grimer-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/088_f2.png');
+          break;
+        case 'golem-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/076_f2.png');
+          break;
+        case 'graveler-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/075_f2.png');
+          break;
+        case 'geodude-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/074_f2.png');
+          break;
+        case 'persian-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/053_f2.png');
+          break;
+        case 'meowth-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/052_f2.png');
+          break;
+        case 'dugtrio-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/051_f2.png');
+          break;
+        case 'diglett-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/050_f2.png');
+          break;
+        case 'ninetales-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/038_f2.png');
+          break;
+        case 'vulpix-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/037_f2.png');
+          break;
+        case 'sandslash-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/028_f2.png');
+          break;
+        case 'sandshrew-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/027_f2.png');
+          break;
+        case 'raichu-alola':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/026_f2.png');
+          break;
         default:
           const requestForm = new XMLHttpRequest();
 
@@ -223,8 +277,13 @@ request.onload = function() {
         option.text.match(/scatterbug-/i) ||
         option.text.match(/mothim-/i) ||
         option.text.match(/rockruff-/i) ||
-        option.text.match(/greninja-battle-bond/i)
+        option.text.match(/greninja-battle-bond/i) ||
+        option.text.match(/minior-/i) && !option.text.match(/red/i) && !option.text.match(/meteor/i)
         ){}
+      else if (option.text.match(/minior-red/i)) {
+        option.text = 'minior'
+        dropdown.add(option);
+      }
       else {
         dropdown.add(option);
       }
