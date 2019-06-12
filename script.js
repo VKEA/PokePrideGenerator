@@ -225,7 +225,7 @@ request.send();
 */
 
 document.getElementById("copyright").innerHTML = `
-  This site is not affiliated with GAME FREAK, The Pok\E9mon Company or Nintendo.<br />
+  This site is not affiliated with GAME FREAK, The Pok\xE9mon Company or Nintendo.<br />
   Pok\xE9mon artwork is made by Ken Sugimori and is retrieved from: <br />
   <a href="http://pokemon.com">The Official Pok\xE9mon Site</a><br />
   <a href="https://bulbapedia.bulbagarden.net/wiki/">Bulbapedia</a><br />
