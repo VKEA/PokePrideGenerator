@@ -214,9 +214,18 @@ function getPokemonForm (form, option) {
         }
         else if (option.match(/-ultra$/i) ||
         option.match(/-winter$/i) ||
+        option.match(/-frost$/i) ||
         option.match(/-sensu$/i)
         ) {
           document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'_f4.png';
+        }
+        else if (option.match(/-fan$/i)
+        ) {
+          document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'_f5.png';
+        }
+        else if (option.match(/-mow$/i)
+        ) {
+          document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'_f6.png';
         }
         else {
           document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'.png';
