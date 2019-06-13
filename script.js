@@ -33,22 +33,13 @@ function renderImage (callback) {
 }
 
 /*
-* Download image
+* Random image
 */
-function downloadImage () {
-var canvas = document.getElementById('myCanvas'),
-dataUrl = canvas.toDataURL(),
-imageFoo = document.createElement('img');
-imageFoo.src = dataUrl;
-
-// Style your image here
-imageFoo.style.width = '100px';
-imageFoo.style.height = '100px';
-
-// After you are done styling it, append it to the BODY element
-document.body.appendChild(imageFoo);
+function getRandom () {
+  document.getElementById('pokemonselector').selectedIndex = Math.floor(Math.random() * document.getElementById('pokemonselector').length);
+  document.getElementById('flagselector').selectedIndex = Math.floor(Math.random() * document.getElementById('flagselector').length);
+  getPokemon();
 }
-
 
 /*
 * Get pokémon image
