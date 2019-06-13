@@ -6,7 +6,7 @@ function renderImage (callback) {
   const canvas = document.getElementById("myCanvas");
   const ctx = canvas.getContext("2d");
 
-  const img1 = loadImage('https://raw.githubusercontent.com/Zt-freak/pokepridegenerator/master/flags/'+document.getElementById('flagselector').value, main);
+  const img1 = loadImage('https://raw.githubusercontent.com/Zt-freak/pokepridegenerator/master/flags/'+document.getElementById('flagselector').value+'.png', main);
   const img2 = loadImage(document.getElementById('pokemon').href, main);
 
   let imagesLoaded = 0;

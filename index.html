@@ -36,7 +36,7 @@
             }
 
             select {
-                font-size: 15pt;
+                font-size: 12pt;
                 width: 80vw;
                 max-width: 250px;
             }
@@ -59,29 +59,50 @@
             <select id="pokemonselector" onchange="getPokemon()">
             </select><br />
             <select id="flagselector" onchange="getPokemon()">
-                <option value="agender.png">agender</option>
-                <option value="aromantic.png">aromantic</option>
-                <option value="asexual.png">asexual</option>
-                <option value="bear.png">bear</option>
-                <option value="bisexual.png">bisexual</option>
-                <option value="demisexual.png">demisexual</option>
-                <option value="gay.png">rainbow flag</option>
-                <option value="gilbert-baker.png">gilbert baker rainbow flag</option>
-                <option value="philadelphia-pride.png">philadelphia pride flag</option>
-                <option value="genderfluid.png">genderfluid</option>
-                <option value="genderqueer.png">genderqueer</option>
-                <option value="intersex.png">intersex</option>
-                <option value="lesbian-2.png">lesbian</option>
-                <option value="lesbian.png">lesbian 2</option>
-                <option value="lesbian-3.png">lesbian 3</option>
-                <option value="labrys.png">lesbian labrys</option>
-                <option value="nonbinary.png">nonbinary</option>
-                <option value="pansexual.png">pansexual</option>
-                <option value="pink-jack.png">pink jack</option>
-                <option value="polysexual.png">polysexual</option>
-                <option value="trans.png">transgender</option>
-                <option value="trans-israel.png">israeli trans flag</option>
-                <option value="twink.png">twink</option>
+                <optgroup label="rainbow flags">
+                    <option value="gay">rainbow flag</option>
+                    <option value="gilbert-baker">gilbert baker rainbow flag</option>
+                    <option value="philadelphia-pride">philadelphia pride flag</option>  
+                </optgroup>
+                <optgroup label="lesbian">
+                    <option value="lesbian-2">lesbian</option>
+                    <option value="lesbian">lesbian 2</option>
+                    <option value="lesbian-3">lesbian 3</option>
+                    <option value="labrys">lesbian labrys</option>
+                </optgroup>
+                <optgroup label="polysexual">
+                    <option value="bisexual">bisexual</option>
+                    <option value="pansexual">pansexual</option>
+                    <option value="polysexual">polysexual</option>
+                </optgroup>
+                <optgroup label="trans/nonbinary">
+                    <option value="genderfluid">genderfluid</option>
+                    <option value="genderqueer">genderqueer</option>
+                    <option value="nonbinary">nonbinary</option>
+                    <option value="trans">transgender</option>
+                </optgroup>
+                <optgroup label="intersex">
+                    <option value="intersex">intersex</option>
+                </optgroup>
+                <optgroup label="ace/aro">
+                    <option value="aromantic">aromantic</option>
+                    <option value="asexual">asexual</option>
+                </optgroup>
+                <optgroup label="demisexual">
+                    <option value="demisexual">demisexual</option>
+                </optgroup>
+                <optgroup label="agender">
+                    <option value="agender">agender</option>
+                    <option value="neutrois">neutroid</option>
+                </optgroup>
+                <optgroup label="culture">
+                    <option value="bear">bear</option>
+                    <option value="twink.">twink</option>
+                </optgroup>
+                <optgroup label="countries">
+                    <option value="trans-israel">israeli trans flag</option>
+                    <option value="pink-jack">pink jack</option>
+                </optgroup>
             </select><br />
             <!--<button class="downloadbutton" id="downloadButton" onclick="downloadImage()">Download</button>-->
             <p class="disclaimer">
