@@ -56,41 +56,53 @@ document.body.appendChild(imageFoo);
 function getPokemon () {
   /* HARDCODED */
   switch (document.getElementById('pokemonselector').value) {
+    case 'frillish-f':
+      getUnlistedPokemonForm('https://archives.bulbagarden.net/media/upload/f/f6/592Frillish-Female.png');
+      break;
+    case 'jellicent-f':
+      getUnlistedPokemonForm('https://archives.bulbagarden.net/media/upload/f/f8/593Jellicent-Female.png');
+      break;
+    case 'unfezant-f':
+      getUnlistedPokemonForm('https://archives.bulbagarden.net/media/upload/6/66/521Unfezant-Female.png');
+      break;
     case 'grookey':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/7/7a/Grookey.png');
-    break;
+      break;
     case 'scorbunny':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/c/cc/Scorbunny.png');
-    break;
+      break;
     case 'sobble':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/0/0c/Sobble.png');
-    break;
+      break;
     case 'gossifleur':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/8/83/Gossifleur.png');
-    break;
+      break;
     case 'eldegoss':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/d/da/Eldegoss.png');
-    break;
+      break;
     case 'wooloo':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/2/2f/Wooloo.png');
-    break;
+      break;
     case 'corviknight':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/2/2e/Corviknight.png');
-    break;
+      break;
     case 'drednaw':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/4/4e/Drednaw.png');
-    break;
+      break;
     case 'zacian':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/a/a7/Zacian.png');
-    break;
+      break;
     case 'zamazenta':
-        getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/b/bd/Zamazenta.png');
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/b/bd/Zamazenta.png');
       break;
     default:
       /* MORE HARDCODED */
       switch (document.getElementById('pokemonselector').options[document.getElementById('pokemonselector').selectedIndex].text) {
         case 'necrozma-ultra':
           getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/800_f4.png');
+          break;
+        case 'lycanroc-dusk':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/3/37/745Lycanroc-Dusk.png');
           break;
         case 'pikachu-partner-cap':
           getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/7/75/025Pikachu-Partner.png');
@@ -118,6 +130,12 @@ function getPokemon () {
           break;
         case 'minior-red-meteor':
           getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/f/ff/774Minior_Red_Dream.png');
+          break;
+        case 'meowstic-f':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/678_f2.png');
+          break;
+        case 'pyroar-f':
+          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/668_f2.png');
           break;
         case 'pikachu-alola-cap':
           getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/e/e3/025Pikachu-Alola.png');
@@ -193,6 +211,7 @@ function getPokemonForm (form, option) {
         option.match(/-dusk$/i) ||
         option.match(/-attack$/i) ||
         option.match(/-school$/i) ||
+        option.match(/-blade$/i) ||
         option.match(/-midnight$/i) ||
         option.match(/-10$/i) ||
         option.match(/-ash$/i) ||
@@ -271,17 +290,41 @@ request.onload = function() {
         data.results[i].name.match(/mothim-/i) ||
         data.results[i].name.match(/rockruff-/i) ||
         data.results[i].name.match(/greninja-battle-bond/i) ||
-        data.results[i].name.match(/lycanroc-dusk/i) ||
         data.results[i].name.match(/minior-/i) && !data.results[i].name.match(/red/i) && !data.results[i].name.match(/meteor/i) ||
         data.results[i].name.match(/silvally-/i) ||
         data.results[i].name.match(/genesect-/i) ||
         data.results[i].name.match(/arceus-/i)
         ){}
+      else if (data.results[i].name == 'minior-red') {
+        pokeArray.push(['minior', data.results[i].url])
+      }
+      else if (data.results[i].name == 'frillish') {
+        pokeArray.push(['frillish-m', data.results[i].url])
+      }
+      else if (data.results[i].name == 'jellicent') {
+        pokeArray.push(['jellicent-m', data.results[i].url])
+      }
+      else if (data.results[i].name == 'pyroar') {
+        pokeArray.push(['pyroar-m', data.results[i].url])
+      }
+      else if (data.results[i].name == 'unfezant') {
+        pokeArray.push(['unfezant-m', data.results[i].url])
+      }
+      else if (data.results[i].name == 'meowstic-male') {
+        pokeArray.push(['meowstic-m', data.results[i].url])
+      }
+      else if (data.results[i].name == 'meowstic-female') {
+        pokeArray.push(['meowstic-f', data.results[i].url])
+      }
       else {
         pokeArray.push([data.results[i].name, data.results[i].url])
       }
     }
     pokeArray.push(
+      ['frillish-f', 'frillish-f'],
+      ['jellicent-f', 'jellicent-f'],
+      ['unfezant-f', 'unfezant-f'],
+      ['pyroar-f', 'pyroar-f'],
       ['grookey', 'grookey'],
       ['scorbunny', 'scorbunny'],
       ['sobble', 'sobble'],
@@ -311,9 +354,7 @@ request.onload = function() {
       el.textContent = opt[0];
       el.value = opt[1];
       dropdown.appendChild(el);
-      console.log(opt[0]);
     }
-    console.log(pokeArray);
    } else {
     // Reached the server, but it returned an error
   }
