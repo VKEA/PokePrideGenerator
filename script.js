@@ -185,7 +185,7 @@ function getPokemonForm (form, option) {
         option.match(/-blue-striped$/i) ||
         option.match(/-east$/i) ||
         option.match(/-sky$/i) ||
-        option.match(/-black$/i) ||
+        option.match(/-white$/i) ||
         option.match(/-sandy$/i) ||
         option.match(/-summer$/i) ||
         option.match(/-heat$/i) ||
@@ -203,7 +203,7 @@ function getPokemonForm (form, option) {
         else if (option.match(/-mega-y$/i) ||
         option.match(/-trash$/i) ||
         option.match(/-wash$/i) ||
-        option.match(/-white$/i) ||
+        option.match(/-black$/i) ||
         option.match(/-dawn$/i) ||
         option.match(/-defense$/i) ||
         option.match(/-autumn$/i) ||
@@ -215,6 +215,7 @@ function getPokemonForm (form, option) {
         else if (option.match(/-ultra$/i) ||
         option.match(/-winter$/i) ||
         option.match(/-frost$/i) ||
+        option.match(/-speed$/i) ||
         option.match(/-sensu$/i)
         ) {
           document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'_f4.png';
@@ -260,76 +261,63 @@ request.open('GET', url, true);
 request.onload = function() {
   if (request.status === 200) {
     const data = JSON.parse(request.responseText);
-    let option;
+    const pokeArray = [];
     for (let i = 0; i < data.results.length; i++) {
-      option = document.createElement('option');
-      option.text = data.results[i].name;
-      option.value = data.results[i].url + '';
 
       if (
-        option.text.match(/totem/i) ||
-        option.text.match(/spewpa-/i) ||
-        option.text.match(/scatterbug-/i) ||
-        option.text.match(/mothim-/i) ||
-        option.text.match(/rockruff-/i) ||
-        option.text.match(/greninja-battle-bond/i) ||
-        option.text.match(/minior-/i) && !option.text.match(/red/i) && !option.text.match(/meteor/i) ||
-        option.text.match(/silvally-/i) ||
-        option.text.match(/genesect-/i) ||
-        option.text.match(/arceus-/i)
+        data.results[i].name.match(/totem/i) ||
+        data.results[i].name.match(/spewpa-/i) ||
+        data.results[i].name.match(/scatterbug-/i) ||
+        data.results[i].name.match(/mothim-/i) ||
+        data.results[i].name.match(/rockruff-/i) ||
+        data.results[i].name.match(/greninja-battle-bond/i) ||
+        data.results[i].name.match(/lycanroc-dusk/i) ||
+        data.results[i].name.match(/minior-/i) && !data.results[i].name.match(/red/i) && !data.results[i].name.match(/meteor/i) ||
+        data.results[i].name.match(/silvally-/i) ||
+        data.results[i].name.match(/genesect-/i) ||
+        data.results[i].name.match(/arceus-/i)
         ){}
-      else if (option.text.match(/minior-red/i)) {
-        option.text = 'minior'
-        dropdown.add(option);
-      }
       else {
-        dropdown.add(option);
+        pokeArray.push([data.results[i].name, data.results[i].url])
       }
     }
+    pokeArray.push(
+      ['grookey', 'grookey'],
+      ['scorbunny', 'scorbunny'],
+      ['sobble', 'sobble'],
+      ['gossifleur', 'gossifleur'],
+      ['eldegoss', 'eldegoss'],
+      ['wooloo', 'wooloo'],
+      ['corviknight', 'corviknight'],
+      ['drednaw', 'drednaw'],
+      ['zacian', 'zacian'],
+      ['zamazenta', 'zamazenta'],
+    )
+
+    pokeArray.sort(sortFunction);
+
+    function sortFunction(a, b) {
+      if (a[0] === b[0]) {
+        return 0;
+      }
+      else {
+        return (a[0] < b[0]) ? -1 : 1;
+      }
+    }
+
+    for (let i = 0; i < pokeArray.length; i++) {
+      let opt = pokeArray[i];
+      let el = document.createElement("option");
+      el.textContent = opt[0];
+      el.value = opt[1];
+      dropdown.appendChild(el);
+      console.log(opt[0]);
+    }
+    console.log(pokeArray);
    } else {
     // Reached the server, but it returned an error
   }
-  option = document.createElement('option');
-  option.text = 'grookey';
-  option.value = 'grookey';
-  dropdown.add(option);
-  option = document.createElement('option');
-  option.text = 'scorbunny';
-  option.value = 'scorbunny';
-  dropdown.add(option);
-  option = document.createElement('option');
-  option.text = 'sobble';
-  option.value = 'sobble';
-  dropdown.add(option);
-  option = document.createElement('option');
-  option.text = 'gossifleur';
-  option.value = 'gossifleur';
-  dropdown.add(option);
-  option = document.createElement('option');
-  option.text = 'eldegoss';
-  option.value = 'eldegoss';
-  dropdown.add(option);
-  option = document.createElement('option');
-  option.text = 'wooloo';
-  option.value = 'wooloo';
-  dropdown.add(option);
-  option = document.createElement('option');
-  option.text = 'corviknight';
-  option.value = 'corviknight';
-  dropdown.add(option);
-  option = document.createElement('option');
-  option.text = 'drednaw';
-  option.value = 'drednaw';
-  dropdown.add(option);
-  option = document.createElement('option');
-  option.text = 'zacian';
-  option.value = 'zacian';
-  dropdown.add(option);
-  option = document.createElement('option');
-  option.text = 'zamazenta';
-  option.value = 'zamazenta';
-  dropdown.add(option);
-  
+
   getPokemon()
 }
 
@@ -338,6 +326,13 @@ request.onerror = function() {
 };
 
 request.send();
+
+/*
+* reorder
+*/
+function reorder () {
+  
+}
 
 /*
 * copyright
