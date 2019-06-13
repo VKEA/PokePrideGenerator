@@ -92,12 +92,6 @@ function getPokemon () {
         case 'necrozma-ultra':
           getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/800_f4.png');
           break;
-        case 'necrozma-dawn':
-          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/800_f3.png');
-          break;
-        case 'necrozma-dusk':
-          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/800_f2.png');
-          break;
         case 'pikachu-partner-cap':
           getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/7/75/025Pikachu-Partner.png');
           break;
@@ -124,30 +118,6 @@ function getPokemon () {
           break;
         case 'minior-red-meteor':
           getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/f/ff/774Minior_Red_Dream.png');
-          break;
-        case 'wishiwashi-school':
-          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/746_f2.png');
-          break;
-        case 'lycanroc-midnight':
-          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/745_f2.png');
-          break;
-        case 'oricorio-sensu':
-          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/741_f4.png');
-          break;
-        case 'oricorio-pau':
-          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/741_f3.png');
-          break;
-        case 'oricorio-pom-pom':
-          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/741_f2.png');
-          break;
-        case 'greninja-ash':
-          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/658_f2.png');
-          break;
-        case 'zygarde-10':
-          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/718_f2.png');
-          break;
-        case 'zygarde-complete':
-          getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/718_f3.png');
           break;
         case 'pikachu-alola-cap':
           getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/e/e3/025Pikachu-Alola.png');
@@ -203,24 +173,50 @@ function getPokemonForm (form, option) {
         for (;dexNumber.length < 3;) {
           dexNumber = "0"+dexNumber;
         }
-        if (option.match(/-mega/i) &&  !option.match(/-mega-y/i)||
-        option.match(/-alola/i) && !option.match(/cap/i) ||
-        option.match(/-primal/i) ||
-        option.match(/-unbound/i) ||
-        option.match(/-origin/i) ||
-        option.match(/-therian/i) ||
-        option.match(/-resolute/i) ||
-        option.match(/-pirouette/i) ||
-        option.match(/-zen/i) ||
-        option.match(/-blue-striped/i) ||
-        option.match(/-east/i) ||
-        option.match(/-sky/i) ||
-        option.match(/-sunshine/i)
+        if (option.match(/-mega$/i) || 
+        option.match(/-mega-x$/i)||
+        option.match(/-alola$/i) && !option.match(/cap/i) ||
+        option.match(/-primal$/i) ||
+        option.match(/-unbound$/i) ||
+        option.match(/-origin$/i) ||
+        option.match(/-therian$/i) ||
+        option.match(/-resolute$/i) ||
+        option.match(/-pirouette$/i) ||
+        option.match(/-blue-striped$/i) ||
+        option.match(/-east$/i) ||
+        option.match(/-sky$/i) ||
+        option.match(/-black$/i) ||
+        option.match(/-sandy$/i) ||
+        option.match(/-summer$/i) ||
+        option.match(/-heat$/i) ||
+        option.match(/-pom-pom$/i) ||
+        option.match(/-dusk$/i) ||
+        option.match(/-attack$/i) ||
+        option.match(/-school$/i) ||
+        option.match(/-midnight$/i) ||
+        option.match(/-10$/i) ||
+        option.match(/-ash$/i) ||
+        option.match(/-sunshine$/i)
         ) {
           document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'_f2.png';
         }
-        else if (option.match(/-mega-y/i)) {
+        else if (option.match(/-mega-y$/i) ||
+        option.match(/-trash$/i) ||
+        option.match(/-wash$/i) ||
+        option.match(/-white$/i) ||
+        option.match(/-dawn$/i) ||
+        option.match(/-defense$/i) ||
+        option.match(/-autumn$/i) ||
+        option.match(/-complete$/i) ||
+        option.match(/-pau$/i)
+        ) {
           document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'_f3.png';
+        }
+        else if (option.match(/-ultra$/i) ||
+        option.match(/-winter$/i) ||
+        option.match(/-sensu$/i)
+        ) {
+          document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'_f4.png';
         }
         else {
           document.getElementById('pokemon').href = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+dexNumber+'.png';
