@@ -32,6 +32,27 @@ function renderImage (callback) {
   }
 }
 
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/460.png', true);
+
+xhr.responseType = 'arraybuffer';
+
+xhr.onload = function(e) {
+   if (this.status == 200) {
+       var uInt8Array = new Uint8Array(this.response); // Note:not xhr.responseText
+
+       for (var i = 0, len = uInt8Array.length; i < len; ++i) {
+           uInt8Array[i] = this.response[i];
+       }
+
+       var byte3 = uInt8Array[4]; // byte at offset 4
+       console.log(byte3)
+       document.getElementById('testimg').src =  "data:image/png;base64," + uInt8Array;
+   }
+}
+
+xhr.send();
+
 /*
 * Random image
 */
@@ -359,12 +380,7 @@ request.onerror = function() {
 
 request.send();
 
-/*
-* reorder
-*/
-function reorder () {
-  
-}
+
 
 /*
 * copyright
