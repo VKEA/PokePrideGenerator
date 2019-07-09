@@ -69,13 +69,13 @@ function getPokemon () {
   /* HARDCODED */
   switch (document.getElementById('pokemonselector').value) {
     case 'frillish-f':
-      getUnlistedPokemonForm('https://archives.bulbagarden.net/media/upload/f/f6/592Frillish-Female.png');
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/f/f6/592Frillish-Female.png');
       break;
     case 'jellicent-f':
-      getUnlistedPokemonForm('https://archives.bulbagarden.net/media/upload/f/f8/593Jellicent-Female.png');
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/f/f8/593Jellicent-Female.png');
       break;
     case 'unfezant-f':
-      getUnlistedPokemonForm('https://archives.bulbagarden.net/media/upload/6/66/521Unfezant-Female.png');
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/6/66/521Unfezant-Female.png');
       break;
     case 'grookey':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/7/7a/Grookey.png');
@@ -106,6 +106,18 @@ function getPokemon () {
       break;
     case 'zamazenta':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/b/bd/Zamazenta.png');
+      break;
+    case 'yamper':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/3/37/Yamper.png');
+      break;
+    case 'alcremie':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/4/4d/Alcremie.png');
+      break;
+    case 'rolycoly':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/0/08/Rolycoly.png');
+      break;
+    case 'duraludon':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/2/28/Duraludon.png');
       break;
     default:
       /* MORE HARDCODED */
@@ -347,6 +359,10 @@ request.onload = function() {
       ['drednaw', 'drednaw'],
       ['zacian', 'zacian'],
       ['zamazenta', 'zamazenta'],
+      ['yamper', 'yamper'],
+      ['alcremie', 'alcremie'],
+      ['rolycoly', 'rolycoly'],
+      ['duraludon', 'duraludon']
     )
 
     pokeArray.sort(sortFunction);

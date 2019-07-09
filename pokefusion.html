@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+                font-size: 10pt;
+            }
+            .imagecontainer {
+                width: 80vw;
+                height: 80vw;
+                max-width: 500px;
+                max-height: 500px;
+                margin: 20px;
+                border: 1px solid black;
+                background-color: #BABABA;
+            }
+            #myCanvas {
+                width: 100%;
+                max-width: 500px;
+                max-height: 500px;
+            }
+
+            p {
+                width: 80vw;
+                max-width: 600px;
+            }
+
+            .renderoptions {
+                padding-left: 20px;
+            }
+            #flagselector {
+                margin-top: 20px;
+            }
+
+            select {
+                font-size: 12pt;
+                width: 80vw;
+                max-width: 250px;
+            }
+
+            .randombutton {
+                margin-top: 20px;
+            }
+
+            #imageURL {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="imageContainer" class="imagecontainer">
+            <canvas id="myCanvas" width="500" height="500"></canvas>
+        </div>
+        <div id="optionsContainer" class="renderoptions">
+            <select id="pokemonselector" onchange="getPokemon()">
+            </select><br />
+            <select id="flagselector" onchange="getPokemon()">
+                <optgroup label="rainbow flags">
+                    <option value="gay">rainbow flag</option>
+                    <option value="gilbert-baker">gilbert baker rainbow flag</option>
+                    <option value="philadelphia-pride">philadelphia pride flag</option>
+                    <option value="quasar-pride">daniel quasar rainbow flag</option>  
+                </optgroup>
+                <optgroup label="lesbian">
+                    <option value="lesbian-2">lesbian</option>
+                    <option value="lesbian">lesbian 2</option>
+                    <option value="lesbian-3">lesbian 3</option>
+                    <option value="labrys">lesbian labrys</option>
+                </optgroup>
+                <optgroup label="polysexual">
+                    <option value="bisexual">bisexual</option>
+                    <option value="pansexual">pansexual</option>
+                    <option value="polysexual">polysexual</option>
+                </optgroup>
+                <optgroup label="trans/nonbinary">
+                    <option value="androgyne">androgyne</option>
+                    <option value="androgyne-2">androgyne 2</option>
+                    <option value="aporagender">aporagender</option>
+                    <option value="demigender">demigender</option>
+                    <option value="demiboy">demiboy</option>
+                    <option value="demigirl">demigirl</option>
+                    <option value="genderfluid">genderfluid</option>
+                    <option value="genderqueer">genderqueer</option>
+                    <option value="maverique">maverique</option>
+                    <option value="nonbinary">nonbinary</option>
+                    <option value="nonbinary2">nonbinary 2</option>
+                    <option value="nonbinary3">nonbinary 3</option>
+                    <option value="trans">transgender</option>
+                </optgroup>
+                <optgroup label="intersex">
+                    <option value="intersex">intersex</option>
+                    <option value="intersex-2">intersex 2</option>
+                </optgroup>
+                <optgroup label="ace/aro">
+                    <option value="aromantic">aromantic</option>
+                    <option value="asexual">asexual</option>
+                </optgroup>
+                <optgroup label="demisexual">
+                    <option value="demisexual">demisexual</option>
+                </optgroup>
+                <optgroup label="agender">
+                    <option value="agender">agender</option>
+                    <option value="neutrois">neutrois</option>
+                </optgroup>
+                <optgroup label="culture">
+                    <option value="bear">bear</option>
+                    <option value="twink">twink</option>
+                </optgroup>
+                <optgroup label="countries">
+                    <option value="trans-israel">israeli trans flag</option>
+                    <option value="pink-jack">pink jack</option>
+                </optgroup>
+                <optgroup label="romantic attraction">
+                    <option value="polyamoury">polyamoury</option>
+                </optgroup>
+                <optgroup label="other">
+                    <option value="straight-ally">straight ally</option>
+                </optgroup>
+            </select><br />
+            <button class="randombutton" id="randomButton" onclick="getRandom()">Random</button>
+            <a class="twitter-share-button"
+                href="https://twitter.com/intent/tweet?text=Hello%20world&url=http://1037390.mbobaas.nl/pokepridegenerator/"
+                data-size="large">
+                <button>Tweet</button>
+            </a>
+            <p class="disclaimer">
+                <ul>
+                    <li><b>Rendering might take a while, please be patient</b></li>
+                    <li><b>Renders a Canvas element, not all browsers support downloading canvas elements as image.</b></li>
+                    <li><b>Not all forms are available just yet. Might be added in a future update.</b></li>
+                    <li><b>If the image doesn't render after a long while, make sure you can connect to http://pokemon.com</b></li>
+                    <li><b>Source can be found on <a href="https://github.com/Zt-freak/pokepridegenerator">GitHub</a></b></li>
+                </ul>
+            </p>
+            <p id="copyright" class="copyright"></p>
+            <a id="pokemon" href=""></a>
+            <img id="testimg">
+        </div>
+    </body>
+</html>
+<script src="fusion.js"></script>
