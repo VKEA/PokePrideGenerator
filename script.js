@@ -203,6 +203,24 @@ function getPokemon () {
         case 'pikachu-original-cap':
           getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/1/17/025Pikachu-Original.png');
           break;
+        case 'pikachu-cosplay':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/2/28/Spr_6o_025_C.png');
+          break;
+        case 'pikachu-rock-star':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/4/4f/025Pikachu-Rock_Star.png');
+          break;
+        case 'pikachu-belle':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/f/f0/025Pikachu-Belle.png');
+          break;
+        case 'pikachu-pop-star':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/e/e8/025Pikachu-Pop_Star.png');
+          break;
+        case 'pikachu-phd':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/2/2f/025Pikachu-PhD.png');
+          break;
+        case 'pikachu-libre':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/e/e7/025Pikachu-Libre.png');
+          break;
         default:
           const requestForm = new XMLHttpRequest();
 
