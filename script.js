@@ -77,6 +77,12 @@ function getPokemon () {
     case 'unfezant-f':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/6/66/521Unfezant-Female.png');
       break;
+    case 'meltan':
+        getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/d/d1/808Meltan.png');
+        break;
+    case 'melmetal':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/e/ea/809Melmetal.png');
+      break;
     case 'grookey':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/7/7a/Grookey.png');
       break;
@@ -118,6 +124,24 @@ function getPokemon () {
       break;
     case 'duraludon':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/2/28/Duraludon.png');
+      break;
+    case 'weezing-galar':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/3/38/110Weezing-Galar.png');
+      break;
+    case 'zigzagoon-galar':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/b/b0/263Zigzagoon-Galar.png');
+      break;
+    case 'linoone-galar':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/8/8e/264Linoone-Galar.png');
+      break;
+    case 'obstagoon':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/4/4a/Obstagoon.png');
+      break;
+    case 'morpeko-full-belly':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/6/6d/Morpeko-Full.png');
+      break;
+    case 'morpeko-hangry':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/9/9c/Morpeko-Hangry.png');
       break;
     default:
       /* MORE HARDCODED */
@@ -362,7 +386,15 @@ request.onload = function() {
       ['yamper', 'yamper'],
       ['alcremie', 'alcremie'],
       ['rolycoly', 'rolycoly'],
-      ['duraludon', 'duraludon']
+      ['duraludon', 'duraludon'],
+      ['weezing-galar', 'weezing-galar'],
+      ['zigzagoon-galar', 'zigzagoon-galar'],
+      ['linoone-galar', 'linoone-galar'],
+      ['obstagoon', 'obstagoon'],
+      ['morpeko-full-belly', 'morpeko-full-belly'],
+      ['morpeko-hangry', 'morpeko-hangry'],
+      ['meltan', 'meltan'],
+      ['melmetal', 'melmetal']
     )
 
     pokeArray.sort(sortFunction);
