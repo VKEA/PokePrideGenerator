@@ -146,6 +146,15 @@ function getPokemon () {
     default:
       /* MORE HARDCODED */
       switch (document.getElementById('pokemonselector').options[document.getElementById('pokemonselector').selectedIndex].text) {
+        case 'castform-sunny':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/b/b6/351Castform-Sunny.png');
+          break;
+        case 'castform-rainy':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/8/89/351Castform-Rainy.png');
+          break;
+        case 'castform-snowy':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/f/f9/351Castform-Snowy.png');
+          break;
         case 'necrozma-ultra':
           getUnlistedPokemonForm('https://assets.pokemon.com/assets/cms2/img/pokedex/full/800_f4.png');
           break;
