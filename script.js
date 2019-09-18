@@ -230,6 +230,9 @@ function getPokemon () {
         case 'pikachu-libre':
           getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/e/e7/025Pikachu-Libre.png');
           break;
+        case 'sirfetch\'d':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/0/0e/Sirfetch%27d.png');
+          break;
         default:
           const requestForm = new XMLHttpRequest();
 
@@ -421,7 +424,8 @@ request.onload = function() {
       ['morpeko-full-belly', 'morpeko-full-belly'],
       ['morpeko-hangry', 'morpeko-hangry'],
       ['meltan', 'meltan'],
-      ['melmetal', 'melmetal']
+      ['melmetal', 'melmetal'],
+      ['sirfetch\'d', 'sirfetch\'d']
     )
 
     pokeArray.sort(sortFunction);
