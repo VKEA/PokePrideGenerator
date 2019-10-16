@@ -251,6 +251,21 @@ function getPokemon () {
         case 'sirfetch\'d':
           getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/0/0e/Sirfetch%27d.png');
           break;
+        case 'charizard-gigantamax':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/8/88/006Charizard-Gigantamax.png');
+          break;
+        case 'butterfree-gigantamax':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/f/fd/012Butterfree-Gigantamax.png');
+          break;
+        case 'pikachu-gigantamax':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/6/6b/025Pikachu-Gigantamax.png');
+          break;
+        case 'meowth-gigantamax':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/9/9f/052Meowth-Gigantamax.png');
+          break;
+        case 'eevee-gigantamax':
+          getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/2/2e/133Eevee-Gigantamax.png');
+          break;
         default:
           const requestForm = new XMLHttpRequest();
 
@@ -449,7 +464,12 @@ request.onload = function() {
       ['sirfetch\'d', 'sirfetch\'d'],
       ['cramorant', 'cramorant'],
       ['polteageist', 'polteageist'],
-      ['ponyta-galar', 'ponyta-galar']
+      ['ponyta-galar', 'ponyta-galar'],
+      ['charizard-gigantamax', 'charizard-gigantamax'],
+      ['butterfree-gigantamax', 'butterfree-gigantamax'],
+      ['pikachu-gigantamax', 'pikachu-gigantamax'],
+      ['meowth-gigantamax', 'meowth-gigantamax'],
+      ['eevee-gigantamax', 'eevee-gigantamax']
     )
 
     pokeArray.sort(sortFunction);
