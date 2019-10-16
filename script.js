@@ -104,8 +104,14 @@ function getPokemon () {
     case 'corviknight':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/2/2e/Corviknight.png');
       break;
+    case 'corviknight-gigantamax':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/b/ba/Corviknight-Gigantamax.png');
+      break;
     case 'drednaw':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/4/4e/Drednaw.png');
+      break;
+    case 'drednaw-gigantamax':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/d/d7/Drednaw-Gigantamax.png');
       break;
     case 'zacian':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/a/a7/Zacian.png');
@@ -118,6 +124,9 @@ function getPokemon () {
       break;
     case 'alcremie':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/4/4d/Alcremie.png');
+      break;
+    case 'alcremie-gigantamax':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/c/c5/Alcremie-Gigantamax.png');
       break;
     case 'rolycoly':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/0/08/Rolycoly.png');
@@ -142,6 +151,15 @@ function getPokemon () {
       break;
     case 'morpeko-hangry':
       getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/9/9c/Morpeko-Hangry.png');
+      break;
+    case 'cramorant':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/9/91/Cramorant.png');
+      break;
+    case 'polteageist':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/0/06/Polteageist.png');
+      break;
+    case 'ponyta-galar':
+      getUnlistedPokemonForm('https://cdn.bulbagarden.net/upload/9/92/077Ponyta-Galar.png');
       break;
     default:
       /* MORE HARDCODED */
@@ -410,11 +428,14 @@ request.onload = function() {
       ['eldegoss', 'eldegoss'],
       ['wooloo', 'wooloo'],
       ['corviknight', 'corviknight'],
+      ['corviknight-gigantamax', 'corviknight-gigantamax'],
       ['drednaw', 'drednaw'],
+      ['drednaw-gigantamax', 'drednaw-gigantamax'],
       ['zacian', 'zacian'],
       ['zamazenta', 'zamazenta'],
       ['yamper', 'yamper'],
       ['alcremie', 'alcremie'],
+      ['alcremie-gigantamax', 'alcremie-gigantamax'],
       ['rolycoly', 'rolycoly'],
       ['duraludon', 'duraludon'],
       ['weezing-galar', 'weezing-galar'],
@@ -425,7 +446,10 @@ request.onload = function() {
       ['morpeko-hangry', 'morpeko-hangry'],
       ['meltan', 'meltan'],
       ['melmetal', 'melmetal'],
-      ['sirfetch\'d', 'sirfetch\'d']
+      ['sirfetch\'d', 'sirfetch\'d'],
+      ['cramorant', 'cramorant'],
+      ['polteageist', 'polteageist'],
+      ['ponyta-galar', 'ponyta-galar']
     )
 
     pokeArray.sort(sortFunction);
