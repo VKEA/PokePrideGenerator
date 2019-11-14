@@ -5,6 +5,7 @@ function renderImage (callback) {
 
   const canvas = document.getElementById("myCanvas");
   const ctx = canvas.getContext("2d");
+  const size = document.getElementById("pokemonSize");
 
   const img1 = loadImage('https://raw.githubusercontent.com/Zt-freak/pokepridegenerator/master/flags/'+document.getElementById('flagselector').value+'.png', main);
   const img2 = loadImage(document.getElementById('pokemon').href, main);
@@ -18,7 +19,7 @@ function renderImage (callback) {
           ctx.drawImage(img1, 0, 0, 500, 500);
 
           ctx.globalAlpha = 1;
-          ctx.drawImage(img2, (canvas.width-350)/2, (canvas.height-350)/2, 350, 350);
+          ctx.drawImage(img2, (canvas.width-size.value)/2, (canvas.height-size.value)/2, size.value, size.value);
       }
   }
 
@@ -502,8 +503,6 @@ request.onerror = function() {
 };
 
 request.send();
-
-
 
 /*
 * copyright

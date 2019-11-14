@@ -31,6 +31,7 @@
             .renderoptions {
                 padding-left: 20px;
             }
+
             #flagselector {
                 margin-top: 20px;
             }
@@ -39,6 +40,11 @@
                 font-size: 12pt;
                 width: 80vw;
                 max-width: 250px;
+            }
+
+            .sizeslider {
+                margin-top: 20px;
+                width: 500px;
             }
 
             .randombutton {
@@ -120,12 +126,8 @@
                     <option value="straight-ally">straight ally</option>
                 </optgroup>
             </select><br />
+            <input class="sizeslider" type="range" min="1" max="500" value="350" class="slider" id="pokemonSize" OnInput="renderImage()"><br />
             <button class="randombutton" id="randomButton" onclick="getRandom()">Random</button>
-            <a class="twitter-share-button"
-                href="https://twitter.com/intent/tweet?text=Hello%20world&url=http://1037390.mbobaas.nl/pokepridegenerator/"
-                data-size="large">
-                <button>Tweet</button>
-            </a>
             <p class="disclaimer">
                 <ul>
                     <li><b>Rendering might take a while, please be patient</b></li>
